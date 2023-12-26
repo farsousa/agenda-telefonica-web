@@ -1,10 +1,14 @@
+import { RecoilRoot } from 'recoil';
 import './App.css';
+import ListarContato from './pages/ListarContato';
 
 function App() {
   return (
-    <div className="App">
-      Olá Mundo
-    </div>
+    <RecoilRoot>
+      <div className="App">
+        <ListarContato />
+      </div>
+    </RecoilRoot>
   );
 }
 
