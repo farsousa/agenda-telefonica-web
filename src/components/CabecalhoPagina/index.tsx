@@ -8,13 +8,8 @@ function CabecalhoPagina() {
             descricao: 'Início'
         },
         {
-            para: 'contato/cadastrar',
+            para: '/cadastrar',
             descricao: 'Cadastrar'
-        }
-        ,
-        {
-            para: '/logout',
-            descricao: 'Sair'
         }
     ]
 

@@ -9,7 +9,7 @@ function ListarContato() {
 
     return (
         <div id="listar-contato">
-            <h1>Olá, Anderson! 👋</h1>
+            <h1>Olá, Visitante! 👋</h1>
             <p>Aqui está a lista de seus contatos...</p>
             {contatos.map(contato => <CartaoContato key={contato.id} contato={contato} />)}            
         </div>

@@ -11,7 +11,7 @@ function AppRoutes() {
             <Routes>
                 <Route path="/" element={<PaginaPadrao />}> 
                     <Route index element={<ListarContato />} />
-                    <Route path="/contato/cadastrar" element={<CadastrarContato />} /> 
+                    <Route path="/cadastrar" element={<CadastrarContato />} /> 
                     <Route path="/detalhar/:id" element={<DetalharContato />} /> 
                 </Route>
                 <Route path="*" element={<PaginaNaoEncontrada />} />                
