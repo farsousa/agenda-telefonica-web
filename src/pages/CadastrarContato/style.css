@@ -1,0 +1,14 @@
+#cadastrar-contato {
+    display: flex;
+    flex-direction: column;
+}
+
+#cadastrar-contato div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+#cadastrar-contato div input {
+    padding: 8px 16px;
+}
