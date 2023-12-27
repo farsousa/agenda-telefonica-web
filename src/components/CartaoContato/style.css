@@ -1,6 +1,16 @@
 .cartao-contato {
-    background-color: beige;
+    background-color: white;
     padding: 16px;
     margin: 8px 0;
     border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid black;
+}
+
+.cartao-contato .acoes .acao {
+    font-size: 1.3em;
+    margin-left: 16px;
+    cursor: pointer;
 }

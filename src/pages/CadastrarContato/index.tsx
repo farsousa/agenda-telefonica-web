@@ -1,12 +1,15 @@
 import { useState } from 'react'
 import './style.css'
 import IContato from '../../interfaces/IContato'
-import { useSetRecoilState } from 'recoil'
-import { listaContatoState } from '../../states/atom'
+import { useRecoilState, useSetRecoilState } from 'recoil'
+import { listaContatoState, listaUfBrasilState } from '../../states/atom'
+import { useNavigate } from 'react-router-dom'
+import InputMask from 'react-input-mask'
+import { v4 as uuidv4 } from 'uuid';
 
 function CadastrarContato() {
     const estadoInicialContato = {
-        id: '',
+        id: uuidv4(),
         nome: '',
         telefone: '',
         endereco: {
@@ -14,10 +17,12 @@ function CadastrarContato() {
             numero: '',
             bairro: '',
             cidade: '',
-            uf: '',
+            uf: 'AL',
             complemento: ''
         }
     }
+    const [listaUfBrasil] = useRecoilState(listaUfBrasilState)
+    const navegate = useNavigate()
     const [contato, setContato] = useState<IContato>(estadoInicialContato)
     const setListaContato = useSetRecoilState(listaContatoState)
 
@@ -25,6 +30,7 @@ function CadastrarContato() {
         evento.preventDefault()
         setListaContato(listaContatoAntiga => [...listaContatoAntiga, contato])
         limparFormulario()
+        navegate('/')
     }
 
     const limparFormulario = () => {
@@ -35,8 +41,8 @@ function CadastrarContato() {
         <div id="cadastrar-contato">
             <h1>Cadastrar contato</h1>
             <form onSubmit={evento => salvarContato(evento)}>
-                <div>
-                    <label htmlFor="nome">Nome</label>
+                <div id='input-nome'>
+                    <label htmlFor="nome">Nome:</label>
                     <input 
                         type="text" 
                         name="nome"
@@ -45,18 +51,22 @@ function CadastrarContato() {
                         required
                     />
                 </div>
-                <div>
-                    <label htmlFor="telefone">Telefone</label>
-                    <input 
-                        type="text" 
-                        name="telefone"
-                        onChange={evento => setContato({...contato, telefone: evento.target.value})}
+                <div id='input-telefone'>
+                    <label htmlFor="telefone">Telefone:</label>
+                    <InputMask
+                        id="telefone"
+                        name='telefone'
+                        mask="(99) 9 9999-9999"
+                        maskChar="_"
+                        placeholder="(##) # ####-####"
+                        min={16}
                         value={contato.telefone}
+                        onChange={evento => setContato({...contato, telefone: evento.target.value})}
                         required
                     />
                 </div>
                 <div>
-                    <label htmlFor="logradouro">logradouro</label>
+                    <label htmlFor="logradouro">Logradouro:</label>
                     <input 
                         type="text" 
                         name="logradouro"
@@ -66,7 +76,7 @@ function CadastrarContato() {
                     />
                 </div>
                 <div>
-                    <label htmlFor="numero">Numero</label>
+                    <label htmlFor="numero">Numero:</label>
                     <input 
                         type="text" 
                         name="numero"
@@ -76,7 +86,7 @@ function CadastrarContato() {
                     />
                 </div>
                 <div>
-                    <label htmlFor="bairro">Bairro</label>
+                    <label htmlFor="bairro">Bairro:</label>
                     <input 
                         type="text" 
                         name="bairro"
@@ -86,7 +96,7 @@ function CadastrarContato() {
                     />
                 </div>
                 <div>
-                    <label htmlFor="cidade">Cidade</label>
+                    <label htmlFor="cidade">Cidade:</label>
                     <input 
                         type="text" 
                         name="cidade"
@@ -96,17 +106,19 @@ function CadastrarContato() {
                     />
                 </div>
                 <div>
-                    <label htmlFor="uf">UF</label>
-                    <input 
-                        type="text" 
-                        name="uf"
+                    <label htmlFor="uf">UF:</label>
+                    <select 
+                        name="uf" 
+                        id="uf" 
+                        value={contato.endereco.uf} 
                         onChange={evento => setContato({...contato, endereco: {...contato.endereco, uf: evento.target.value}})}
-                        value={contato.endereco.uf}
                         required
-                    />
+                    >
+                        {listaUfBrasil.map((uf, index) => <option key={index} value={uf as string}>{uf}</option>)}
+                    </select>
                 </div>
                 <div>
-                    <label htmlFor="complemento">Complemento</label>
+                    <label htmlFor="complemento">Complemento:</label>
                     <input 
                         type="text" 
                         name="complemento"

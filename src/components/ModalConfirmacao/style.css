@@ -1,0 +1,31 @@
+.modal-confirmacao {
+    z-index: 1;
+    background-color: rgba(226, 223, 223, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal-confirmacao div {
+    background-color: aliceblue;
+    width: 40%;
+    margin: 40vh auto;
+    text-align: center;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 3px 0px;
+}
+
+.modal-confirmacao div p {
+    margin-bottom: 12px;
+}
+
+.modal-confirmacao div button {
+    margin: 10px;
+    padding: 5px 20px;
+    border-radius: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+}

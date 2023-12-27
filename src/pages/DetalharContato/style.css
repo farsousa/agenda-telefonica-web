@@ -1,0 +1,15 @@
+#detalhar-contato {
+    display: flex;
+    flex-direction: column;
+}
+
+#detalhar-contato p {
+    margin: 4px 0;
+}
+
+#detalhar-contato span {
+    cursor: pointer;
+    color: brown;
+    text-decoration: underline;
+    margin-top: 16px;
+}

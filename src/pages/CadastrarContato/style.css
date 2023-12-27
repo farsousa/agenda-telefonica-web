@@ -1,6 +1,7 @@
 #cadastrar-contato {
     display: flex;
     flex-direction: column;
+    padding-bottom: 30px;
 }
 
 #cadastrar-contato div {
@@ -9,6 +10,8 @@
     margin-bottom: 8px;
 }
 
-#cadastrar-contato div input {
+#cadastrar-contato div input, #cadastrar-contato div select {
     padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid black;
 }
