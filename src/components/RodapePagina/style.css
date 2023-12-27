@@ -1,0 +1,13 @@
+.rodape-pagina {
+    background-color: brown;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+}
+
+.rodape-pagina p {
+    text-align: center;
+    color: white;
+}

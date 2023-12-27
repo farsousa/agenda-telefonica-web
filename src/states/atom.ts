@@ -1,23 +1,6 @@
 import { atom } from "recoil"
 import IContato from "../interfaces/IContato"
 
-export const contatoState = atom<IContato>({
-    key: 'contatoState',
-    default: {
-        id: '',
-        nome: '',
-        telefone: '',
-        endereco: {
-            logradouro: '',
-            numero: '',
-            bairro: '',
-            cidade: '',
-            uf: '',
-            complemento: ''
-        }
-    }
-})
-
 export const listaContatoState = atom<IContato[]>({
     key: 'listaContatoState',
     default: [{
@@ -55,6 +38,18 @@ export const listaContatoState = atom<IContato[]>({
             cidade: 'Cidade 3',
             uf: 'MA',
             complemento: 'Perto da loja 3'
+        }
+    },{
+        id: '4',
+        nome: 'Fernanda',
+        telefone: '4444',
+        endereco: {
+            logradouro: 'Rua 4',
+            numero: 'Numero 4',
+            bairro: 'Bairro 4',
+            cidade: 'Cidade 4',
+            uf: 'MA',
+            complemento: 'Perto da loja 4'
         }
     }]
 })

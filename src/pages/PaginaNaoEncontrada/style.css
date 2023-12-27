@@ -1,0 +1,16 @@
+#pagina-nao-encontrada {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#pagina-nao-encontrada h1 {
+    font-size: 8em;
+}
+
+#pagina-nao-encontrada span {
+    cursor: pointer;
+    color: brown;
+    text-decoration: underline;
+}
