@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom"
 import ListarContato from "./pages/ListarContato"
 import CadastrarContato from "./pages/CadastrarContato"
-import PaginaPadrao from "./pages/PaginaPadrao"
+import PaginaPadrao from "./templates/PaginaPadrao"
 import PaginaNaoEncontrada from "./pages/PaginaNaoEncontrada"
 import DetalharContato from "./pages/DetalharContato"
 
